@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.column1 {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 80vh;
+}
+.column2 {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 40vh;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  width: 60%;
+}
+</style>
+</head>
+<body>
+
+<h1 style="color:red;font-size:3vw;">Who Is In My Spot?</h1>
+
+<div class="row">
+  <div class="column1" style="background-color:#aaa;">
+	<h1 style="font-size:1.5vw;">Latest Picture</h1>
+    <img src="/static/who/{{imageFile}}" class="center"/>
+	  <center><h3 style="font-size:1.75vw;">{{latestPlate}} | Known car: {{latestKnown}}</h3><h3 style="font-size:1.75vw;">Date/Time: {{latestDate}}</h3></center>
+  </div>
+  <div class="column2" style="background-color:#ccc;">
+    <h1 style="font-size:1.5vw;">Last 5 Observations</h1>
+	<h3 style="font-size:1vw;">LICENSE&nbsp; ||&nbsp; CONFIDENCE&nbsp ||&nbsp; DATE/TIME&nbsp; ||&nbsp; KNOWN CAR?</h3>
+	<hr color=#FFFFFF>
+	  <h3 style="font-size:.88vw;">{{plate1}}&nbsp; |&nbsp; {{confidence1}}&nbsp; |&nbsp; {{date1}}&nbsp; |&nbsp; {{known1}}</h3>
+	  <h3 style="font-size:.88vw;">{{plate2}}&nbsp; |&nbsp; {{confidence2}}&nbsp; |&nbsp; {{date2}}&nbsp; |&nbsp; {{known2}}</h3>
+	  <h3 style="font-size:.88vw;">{{plate3}}&nbsp; |&nbsp; {{confidence3}}&nbsp; |&nbsp; {{date3}}&nbsp; |&nbsp; {{known3}}</h3>
+	  <h3 style="font-size:.88vw;">{{plate4}}&nbsp; |&nbsp; {{confidence4}}&nbsp; |&nbsp; {{date4}}&nbsp; |&nbsp; {{known4}}</h3>
+	  <h3 style="font-size:.88vw;">{{plate5}}&nbsp; |&nbsp; {{confidence5}}&nbsp; |&nbsp; {{date5}}&nbsp; |&nbsp; {{known5}}</h3>
+  </div>
+  <div class="column2" style="background-color:#72CFD4;">
+	<h1 style="font-size:1.5vw;">Statistics</h1>
+	<hr color=#FCFCFC>
+	<h3 style="font-size:1vw;">{{statistic1}}</h3>
+	<h3 style="font-size:1vw;">{{statistic2}}</h3> 
+	  
+  </div>
+</div>
+</body>
+</html>
